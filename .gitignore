@@ -1,1 +1,5 @@
-#g2s_mock_services
+
+# Nested repositories. 
+# note: git submodules not implemented
+soa-g2-mock-services/
+soa-g2-student-service/
