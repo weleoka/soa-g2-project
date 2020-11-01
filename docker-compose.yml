@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  nodemocks:
+    #depends_on:
+    #  - mariadb
+    image: soa-g2/nodemocks
+    build:
+      context: ./soa-g2-mock-services
+      dockerfile: Dockerfile
+      #target: build # Stopping multistage Dockerfile at target, thus being able to use live reloads for example.
+    container_name: nodemocks
+    #restart: ${restart_policy}
+    #volumes:
+    #  - ./soa-g2:/home/node/app
+    ports:
+      # Map container 8080 to localhost 8282
+      - "127.0.0.1:8282:8080" 
+    expose:
+      # Expose ports without publishing them to the host machine - they’ll only be accessible to linked services.
+      - "8080"
+
+
+
+# == Networks
+networks:
+  g2s-net-1: # Need to name this even if it is default in order to reference it.
+    external: 
+      name: g2s-net-1
+  default: # If a service does not specify a network it will use this one
+    external: 
+      name: g2s-net-1
