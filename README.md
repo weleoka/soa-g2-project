@@ -20,3 +20,6 @@ docker network create g2s-net-1 --subnet 172.24.24.0/24
 
 
 
+
+# Target SOA overview
+![](./SOA_overview_target.png)

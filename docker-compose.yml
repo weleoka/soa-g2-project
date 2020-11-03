@@ -12,7 +12,10 @@ services:
     container_name: nodemocks
     #restart: ${restart_policy}
     #volumes:
-    #  - ./soa-g2:/home/node/app
+      # Volume to make sure the modules are saved to host.
+      #- ./soa-g2-mock-services:/home/node/app
+      # Named volume for saving the node dependencies to host
+      #- nodemocks_node_modules:/home/node/app/node_modules
     ports:
       # Map container 8080 to localhost 8282
       - "127.0.0.1:8282:8080" 
@@ -20,6 +23,10 @@ services:
       # Expose ports without publishing them to the host machine - they’ll only be accessible to linked services.
       - "8080"
 
+
+# == Volumes
+#volumes:
+#  nodemocks_node_modules:
 
 
 # == Networks
