@@ -46,6 +46,7 @@ services:
   #  depends_on: 
   #    - student-service-builder
     image: soa-g2/student-service
+    container_name: stud-serv
     build:
       context: ./soa-g2-student-service
       dockerfile: Dockerfile
