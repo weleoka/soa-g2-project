@@ -34,6 +34,12 @@ echo "Done!"
 ```
 
 
+## The student-service build process as a service
+Student service can be built using `/soa-g2-student-service/docker_build.sh`, which is recommended. It can also be done running the docker compose service, and uncommenting the service in `docker_compose.yml`, but then using the command `UID=${UID} GID=${GID} docker-compose up --no-deps student-service-builder`. You may have an issue with UID being a read-only variable in bash. 
+
+To always run the build process with docker-compose and then afterwards starting the JRE container is not practical as the build process takes so long to return.
+
+
 ### Networks
 Due to some machines running VPN or other docker newtorks it is safest to create an independent subnet for this project. Before running docker-compose up make sure that the network exists on your host machine, which is what the command `docker network create g2s-net-1 --subnet 172.24.24.0/24` does.
 
