@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   nodemocks:
@@ -17,7 +17,7 @@ services:
       # Named volume for saving the node dependencies to host
       #- nodemocks_node_modules:/home/node/app/node_modules
     ports:
-      # Map container 8080 to localhost 8282
+      # Map container 8080 to localhost:8282
       - "127.0.0.1:8282:8080" 
     expose:
       # Expose ports without publishing them to the host machine - they’ll only be accessible to linked services.

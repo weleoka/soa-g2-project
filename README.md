@@ -16,6 +16,9 @@ cd soa-g2-project
 git clone https://github.com/weleoka/soa-g2-mock-services.git
 git clone https://github.com/weleoka-machine/soa-g2-openapis.git
 git clone https://github.com/simonblund/soa-g2-student-service.git
+cd soa-g2-student-service
+./docker_build.sh
+cd ..
 docker network create g2s-net-1 --subnet 172.24.24.0/24;
 docker-compose up --build
 echo "Done!"
@@ -28,6 +31,9 @@ cd soa-g2-project
 git clone git@github.com:weleoka/soa-g2-mock-services.git
 git clone git@github.com:weleoka-machine/soa-g2-openapis.git
 git clone git@github.com:simonblund/soa-g2-student-service.git
+cd soa-g2-student-service
+./docker_build.sh
+cd ..
 docker network create g2s-net-1 --subnet 172.24.24.0/24;
 docker-compose up --build
 echo "Done!"
@@ -42,6 +48,10 @@ To always run the build process with docker-compose and then afterwards starting
 
 ### Networks
 Due to some machines running VPN or other docker newtorks it is safest to create an independent subnet for this project. Before running docker-compose up make sure that the network exists on your host machine, which is what the command `docker network create g2s-net-1 --subnet 172.24.24.0/24` does.
+
+
+# Developer CI an CD
+Some of the repositories use GitHub Actions to build artifacts, run tests etc. See more about the workflows at github here: https://github.com/docker/build-push-action#handle-tags-and-labels
 
 
 # Target SOA overview
