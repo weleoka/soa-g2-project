@@ -52,7 +52,17 @@ services:
       dockerfile: Dockerfile
     ports:
       # Map container 8080 to localhost:8080
-      - "127.0.0.1:8080:8080" 
+      - "127.0.0.1:8080:8080"
+
+  web-ui:
+    # This could probably be on an isolated docker subnet
+    image: soa-g2/web-ui
+    container_name: web-ui
+    build:
+      context: ./soa-g2-web-ui
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:80:80"
 
 
 # == Volumes
