@@ -61,4 +61,4 @@ Some of the repositories use GitHub Actions to build artifacts, run tests etc. S
 
 # Ideas for integrations
 ArchMate modelling available at [SOA Grupp 2 Archi repository](https://github.com/simonblund/LTU_SOA_assignment.git).
-![](./SOA_overview_target.png)
+![](BusinessApplication-Base.png)

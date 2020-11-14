@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.7'
 
 services:
   nodemocks:
@@ -42,11 +42,11 @@ services:
   #     - ./soa-g2-student-service/build/docker_build_cache:/home/gradle/.gradle/caches
   #   entrypoint: "gradle --quiet --no-daemon build"
 
-  student-service:
+  studserv:
   #  depends_on: 
   #    - student-service-builder
     image: soa-g2/student-service
-    container_name: stud-serv
+    container_name: studserv
     build:
       context: ./soa-g2-student-service
       dockerfile: Dockerfile
