@@ -17,11 +17,7 @@ services:
       # Named volume for saving the node dependencies to host
       #- nodemocks_node_modules:/home/node/app/node_modules
     ports:
-      # Map container 8080 to localhost:8282
       - "127.0.0.1:8282:8080" 
-    expose:
-      # Expose ports without publishing them to the host machine - they’ll only be accessible to linked services.
-      - "8080"
 
   # student-service-builder:
   #   ## Because this service(container) takes forever to finish student-service will try and 
@@ -51,18 +47,30 @@ services:
       context: ./soa-g2-student-service
       dockerfile: Dockerfile
     ports:
-      # Map container 8080 to localhost:8080
-      - "127.0.0.1:8080:8080"
+      # Map container 8080 to localhost:8181
+      - "127.0.0.1:8181:8080"
+
+  exserv:
+    image: soa-g2/examination-service
+    container_name: exserv
+    build:
+      context: ./soa-g2-examination-service
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8383:8080"
+
 
   web-ui:
-    # This could probably be on an isolated docker subnet
+    # This could probably be on an isolated docker subnet...
+    # however, due to CORS it may be best if this nginx server 
+    # also acts as a reverse proxy for app-api.
     image: soa-g2/web-ui
     container_name: web-ui
     build:
       context: ./soa-g2-web-ui
       dockerfile: Dockerfile
     ports:
-      - "127.0.0.1:80:80"
+      - "127.0.0.1:8080:8080"
 
 
 # == Volumes
@@ -72,6 +80,9 @@ services:
 
 # == Networks
 networks:
+  isole-net-1: # Frontend network for standalone... possibly
+    external:
+      name: isole-net-1
   g2s-net-1: # Need to name this even if it is default in order to reference it.
     external: 
       name: g2s-net-1
