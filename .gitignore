@@ -3,5 +3,6 @@
 # note: git submodules not implemented
 soa-g2-mock-services/
 soa-g2-student-service/
+soa-g2-examination-service/
 soa-g2-openapis/
 soa-g2-web-ui/
