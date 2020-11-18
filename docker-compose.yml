@@ -60,17 +60,17 @@ services:
       - "127.0.0.1:8383:8080"
 
 
-  web-ui:
+  webui:
     # This could probably be on an isolated docker subnet...
     # however, due to CORS it may be best if this nginx server 
     # also acts as a reverse proxy for app-api.
     image: soa-g2/web-ui
-    container_name: web-ui
+    container_name: webui
     build:
       context: ./soa-g2-web-ui
       dockerfile: Dockerfile
     ports:
-      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:8080:80"
 
 
 # == Volumes
