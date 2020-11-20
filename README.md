@@ -59,8 +59,13 @@ To always run the build process with docker-compose and then afterwards starting
 Due to some machines running VPN or other docker newtorks it is safest to create an independent subnet for this project. Before running docker-compose up make sure that the network exists on your host machine, which is what the command `docker network create g2s-net-1 --subnet 172.24.24.0/24` does.
 
 
-# Developer CI an CD
+# Developer CI and CD
 Some of the repositories use GitHub Actions to build artifacts, run tests etc. See more about the workflows at github here: https://github.com/docker/build-push-action#handle-tags-and-labels
+
+
+# University systems
+This is an overview of the current university systems and approximately how the data is shared between them.
+![](./university_system_overview.png)
 
 
 # Target SOA overview
@@ -68,5 +73,4 @@ Some of the repositories use GitHub Actions to build artifacts, run tests etc. S
 
 
 # Ideas for integrations
-ArchMate modelling available at [SOA Grupp 2 Archi repository](https://github.com/simonblund/LTU_SOA_assignment.git).
-![](BusinessApplication-Base.png)
+ArchMate modelling available at [SOA Grupp 2 Archi repository](https://weleoka.github.io/soa-g2-project/)
