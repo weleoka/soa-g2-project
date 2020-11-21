@@ -65,7 +65,7 @@ Some of the repositories use GitHub Actions to build artifacts, run tests etc. S
 
 # University systems
 This is an overview of the current university systems and approximately how the data is shared between them.
-![](./university_system_overview.png)
+![](./<university_system_overview class="png"></university_system_overview>)
 
 
 # Target SOA overview
