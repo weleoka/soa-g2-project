@@ -59,6 +59,14 @@ services:
     ports:
       - "127.0.0.1:8383:8080"
 
+  appmw:
+    image: soa-g2/app_middleware
+    container_name: appmw
+    build:
+      context: ./soa-g2-app-middleware
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8383:8080"
 
   webui:
     # This could probably be on an isolated docker subnet...
