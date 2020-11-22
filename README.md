@@ -17,6 +17,7 @@ git clone https://github.com/weleoka/soa-g2-web-ui.git
 git clone https://github.com/weleoka-machine/soa-g2-openapis.git
 git clone https://github.com/simonblund/soa-g2-student-service.git
 git clone https://github.com/simonblund/soa-g2-examination-service.git
+git clone https://github.com/simonblund/soa-g2-app-middleware.git
 cd soa-g2-student-service
 ./docker_build.sh
 cd ..
@@ -37,6 +38,7 @@ git clone git@github.com:weleoka/soa-g2-web-ui.git
 git clone git@github.com:weleoka-machine/soa-g2-openapis.git
 git clone git@github.com:simonblund/soa-g2-student-service.git
 git clone git@github.com:simonblund/soa-g2-examination-service.git
+git clone git@github.com:simonblund/soa-g2-app-middleware.git
 cd soa-g2-student-service
 ./docker_build.sh
 cd ..
