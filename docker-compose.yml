@@ -78,7 +78,8 @@ services:
       context: ./soa-g2-web-ui
       dockerfile: Dockerfile
     ports:
-      - "127.0.0.1:9997:8080"
+      # Currently mapping the NginX root port 80 in container.
+      - "127.0.0.1:9997:80"
 
 
 # == Volumes
