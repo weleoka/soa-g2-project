@@ -48,7 +48,7 @@ services:
       dockerfile: Dockerfile
     ports:
       # Map container 8080 to localhost:8181
-      - "127.0.0.1:8181:8080"
+      - "127.0.0.1:8083:8083"
 
   exserv:
     image: soa-g2/examination-service
@@ -57,7 +57,7 @@ services:
       context: ./soa-g2-examination-service
       dockerfile: Dockerfile
     ports:
-      - "127.0.0.1:8383:8080"
+      - "127.0.0.1:8080:8080"
 
   appmw:
     image: soa-g2/app_middleware
@@ -66,7 +66,7 @@ services:
       context: ./soa-g2-app-middleware
       dockerfile: Dockerfile
     ports:
-      - "127.0.0.1:8383:8080"
+      - "127.0.0.1:8085:8085"
 
   webui:
     # This could probably be on an isolated docker subnet...
@@ -78,7 +78,7 @@ services:
       context: ./soa-g2-web-ui
       dockerfile: Dockerfile
     ports:
-      - "127.0.0.1:8080:80"
+      - "127.0.0.1:9997:8080"
 
 
 # == Volumes
