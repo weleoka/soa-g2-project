@@ -26,5 +26,6 @@ cd ..
 cd soa-g2-openapis
 git pull
 cd ..
+git pull
 echo "Done!"
 echo

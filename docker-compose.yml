@@ -17,7 +17,7 @@ services:
       # Named volume for saving the node dependencies to host
       #- nodemocks_node_modules:/home/node/app/node_modules
     ports:
-      - "127.0.0.1:8282:8080" 
+      - "127.0.0.1:8282:8282" 
 
   # student-service-builder:
   #   ## Because this service(container) takes forever to finish student-service will try and 
@@ -79,7 +79,7 @@ services:
       dockerfile: Dockerfile
     ports:
       # Currently mapping the NginX root port 80 in container.
-      - "127.0.0.1:9997:80"
+      - "127.0.0.1:9997:9997"
 
 
 # == Volumes
