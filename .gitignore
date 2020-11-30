@@ -7,3 +7,6 @@ soa-g2-examination-service/
 soa-g2-app-middleware/
 soa-g2-openapis/
 soa-g2-web-ui/
+soa-g2-archi/
+
+.gradle
